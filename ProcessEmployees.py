@@ -26,28 +26,25 @@ for r in reader:
     if r[3] == "Marketing":
         if r[4] == "CSR":
             name = r[1]+" "+r[2]
-            sal = r[5]
+            sal = float(r[5])
             emp[name] = sal
 
 #iternate through the dictionary and print out the key and value as per printout
 
 for n, s in emp.items():
-    print(f"Manager Name: {n} Current Salary: ${s}")
+    print(f"Manager Name: {n} Current Salary: ${s:,.2f}")
 
 print()
 print('=========================================')
 print()
 
-print(emp)
 for i in emp.values():
-    # print(i)
-    new = float(i) * 1.1
-    newsal = round(float(new), 2)
-    # print(newsal)
+    new = float(i)
+    newsal = round(float(new)*1.1, 2)
     emp[name] = newsal
-print(emp)
+
 for name, sal in emp.items():
-    print(f"Manager Name: {name} New Salary: ${sal}")
+    print(f"Manager Name: {name} New Salary: ${sal:,.2f}")
 
           
         
